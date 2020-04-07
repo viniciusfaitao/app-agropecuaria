@@ -1,12 +1,12 @@
 export const avesGalinha = [
 {
-  
+  image: 'img/download.jpg',
   name: 'Postura 5kg sitio',
   price: 8.00,
   description: 'aaa'
 },
 {
-  image: /IMGS/racao1.,
+  image: 'img/racao1.png',
   name: 'Inicial 5kg 30- dias',
   price: 11.00,
   description: 'aaa'
