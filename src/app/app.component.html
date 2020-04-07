@@ -1,7 +1,7 @@
 <app-top-bar></app-top-bar>
     <button class="positionprice" id="Price">Ordernar por preço</button>
     <button class="positionName" id="Name">Ordernar por nome</button>
-<div *ngIf="loadContent" >
+<div class="positionMenu" *ngIf="loadContent" >
 
 	<form [formGroup]="form"  style="padding-left:10px; padding-right:70px; padding-top:20px;" class="position1">
     <ng-multiselect-dropdown
@@ -195,13 +195,14 @@
 </div>
 
 <div *ngIf="isAvesGalinha">
- <div *ngFor="let avesGalinha of products7">
-   <img [src] = "avesGalinha.image">
-    <h3>
+ <div class = "posImg" *ngFor="let avesGalinha of products7">
+   
+   <img class="tamImg" [src] = "avesGalinha.image">
+    <h4>
       <a [title]="avesGalinha.name + ' details'">
         {{ avesGalinha.name }}
       </a>
-    </h3>
+    </h4>
     <p *ngIf="avesGalinha.price">
       Preço R${{avesGalinha.price}}
     </p>
@@ -257,7 +258,9 @@
     </app-product-alerts>   
   </div>
 </div>
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     
 

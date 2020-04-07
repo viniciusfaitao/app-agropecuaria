@@ -32,4 +32,30 @@ p {
     float: right;
     justify-content: center;
   }
+  .tamImg{
+    width: 150px;
+    height: 200px;
+    
+  }
+  .posImg{
+    width: 50%;
+    margin-top: 50px;
+    text-align-last: center;
+    max-height: 265px;
+    overflow: hidden;
+    min-inline-size: -webkit-fill-available;
+  }
+
+  .posImg:hover{
+    overflow: visible;
+    z-index: 9999;
+    border: solid 1px;
+    color: blue;
+    max-height: 400px;
+  }
+
+  .positionMenu{
+    width: 100%;
+    margin: 30px;
+  }
 }
