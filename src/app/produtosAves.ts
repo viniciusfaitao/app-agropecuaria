@@ -1,6 +1,6 @@
 export const avesGalinha = [
 {
-  imagePath = '/assets/minhaimage.jpg',
+  image = '/IMGS/download.jfif',
   name: 'Postura 5kg sitio',
   price: 8.00,
   description: 'aaa'
