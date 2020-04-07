@@ -3,7 +3,7 @@
     <button class="positionName" id="Name">Ordernar por nome</button>
 <div class="positionMenu" *ngIf="loadContent" >
 
-	<form [formGroup]="form"  style="padding-left:10px; padding-right:70px; padding-top:20px;" class="position1">
+	<form [formGroup]="form"  class="positionMenu position1">
     <ng-multiselect-dropdown
       [placeholder]="'Tipo de animal'" 
       [data]="dataAnimal" 
@@ -16,7 +16,7 @@
   </form>
 
   <div *ngIf="isCachorroOption">
-    <form [formGroup]="form"  style="padding-left:10px; padding-right:70px; padding-top:20px;" class="position2">
+    <form [formGroup]="form"  class="positionMenu position2">
       
         <ng-multiselect-dropdown
           [placeholder]="'Porte'" 
@@ -31,7 +31,7 @@
    </div>
 
    <div *ngIf="isGatoOption">
-    <form [formGroup]="form"  style="padding-left:10px; padding-right:70px; padding-top:20px;" class="position2">
+    <form [formGroup]="form"  class="positionMenu position2">
       
         <ng-multiselect-dropdown
           [placeholder]="'Tipo'" 
@@ -46,7 +46,7 @@
   </div>
 
   <div *ngIf="isAvesOption">
-   <form [formGroup]="form" style="padding-left:10px; padding-right:70px; padding-top:20px;" class="position3">
+   <form [formGroup]="form" class="positionMenu position2">
     <ng-multiselect-dropdown #multiSelect
       [placeholder]="'Tipo'" 
       [data]="dataAves" 
