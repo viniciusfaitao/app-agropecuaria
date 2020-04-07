@@ -1,0 +1,35 @@
+p {
+  font-family: Lato;
+}
+@media(min-width:767px){
+  .position1{
+    float:left;
+    width: 40%;
+  }
+  .position2{
+    float:left;
+    position:absolute;
+    right: 30%;
+    width: 30%;
+  }
+  .position3{
+    float:left;
+    position:absolute;
+    right: 1%;
+    width: 30%;
+  }
+}
+@media(max-width:767px){
+  
+  .positionprice{
+    width: 49%;
+    float:left;
+    justify-content: center;
+  }
+  .positionName{
+    margin-bottom: 15px;
+    width: 49%;
+    float: right;
+    justify-content: center;
+  }
+}

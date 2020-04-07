@@ -1,0 +1,266 @@
+<app-top-bar></app-top-bar>
+    <button class="positionprice" id="Price">Ordernar por preço</button>
+    <button class="positionName" id="Name">Ordernar por nome</button>
+<div *ngIf="loadContent" >
+
+	<form [formGroup]="form"  style="padding-left:10px; padding-right:70px; padding-top:20px;" class="position1">
+    <ng-multiselect-dropdown
+      [placeholder]="'Tipo de animal'" 
+      [data]="dataAnimal" 
+      [formControl]="f.name" 
+      [settings]="settings"
+      (onSelect)="onItemSelectAnimal($event)" 
+      (onDeSelect)="onDeSelectAnimal($event)">
+		</ng-multiselect-dropdown>
+   
+  </form>
+
+  <div *ngIf="isCachorroOption">
+    <form [formGroup]="form"  style="padding-left:10px; padding-right:70px; padding-top:20px;" class="position2">
+      
+        <ng-multiselect-dropdown
+          [placeholder]="'Porte'" 
+          [data]="dataPorte" 
+          [formControl]="f.name2" 
+          [settings]="settings"
+          (onSelect)="onItemSelectPorte($event)" 
+          (onDeSelect)="onDeSelectPorte($event)">
+        </ng-multiselect-dropdown>
+    
+    </form>
+   </div>
+
+   <div *ngIf="isGatoOption">
+    <form [formGroup]="form"  style="padding-left:10px; padding-right:70px; padding-top:20px;" class="position2">
+      
+        <ng-multiselect-dropdown
+          [placeholder]="'Tipo'" 
+          [data]="dataGato" 
+          [formControl]="f.name2" 
+          [settings]="settings"
+          (onSelect)="onSelectGato($event)" 
+          (onDeSelect)="onDeSelectGato($event)">
+        </ng-multiselect-dropdown>
+      
+    </form>
+  </div>
+
+  <div *ngIf="isAvesOption">
+   <form [formGroup]="form" style="padding-left:10px; padding-right:70px; padding-top:20px;" class="position3">
+    <ng-multiselect-dropdown #multiSelect
+      [placeholder]="'Tipo'" 
+      [data]="dataAves" 
+      [formControl]="f.name3" 
+      [settings]="settings"
+      [disabled]="false"
+      (onSelect)="onSelectAves($event)" 
+      (onDeSelect)="onDeSelectAves($event)">
+		</ng-multiselect-dropdown>
+  </form>
+  </div>
+
+  <!-- <span *ngIf="f?.name?.errors?.required" style="color: red;">
+      City is required
+    </span> -->
+
+</div>
+
+<div *ngIf="isCachorroGrande">
+    <div *ngFor="let cachorro of products1">
+
+      <h3>
+        <a [title]="cachorro.name + ' details'">
+          {{ cachorro.name }}
+        </a>
+      </h3>
+      <p *ngIf="cachorro.price">
+        Preço R${{cachorro.price}}
+      </p>
+      <p *ngIf="cachorro.description">
+        Descrição: {{ cachorro.description }}
+      </p>
+      <app-product-alerts
+        [product]="cachorro" 
+        (notify)="onNotify()">
+      </app-product-alerts>   
+    </div>
+</div>
+<div *ngIf="isCachorroMedio" >
+    <div *ngFor="let cachorro of products2 " >
+
+      <h3>
+        <a [title]="cachorro.name + ' details'">
+          {{ cachorro.name }}
+        </a>
+      </h3>
+      <p *ngIf="cachorro.price">
+        Preço R${{cachorro.price}}
+      </p>
+      <p *ngIf="cachorro.description">
+        Descrição: {{ cachorro.description }}
+      </p>
+      <app-product-alerts
+        [product]="cachorro" 
+        (notify)="onNotify()">
+      </app-product-alerts>   
+    </div> 
+</div>
+<div *ngIf="isCachorroPequeno">
+    <div   *ngFor="let cachorro of products3">
+
+      <h3>
+        <a [title]="cachorro.name + ' details'">
+          {{ cachorro.name }}
+        </a>
+      </h3>
+      <p *ngIf="cachorro.price">
+        Preço R${{cachorro.price}}
+      </p>
+      <p *ngIf="cachorro.description">
+        Descrição: {{ cachorro.description }}
+      </p>
+      <app-product-alerts
+        [product]="cachorro" 
+        (notify)="onNotify()">
+      </app-product-alerts>   
+    </div> 
+</div>
+
+<div *ngIf="isGatoAdulto">
+ <div *ngFor="let gato of products4">
+    <h3>
+      <a [title]="gato.name + ' details'">
+        {{ gato.name }}
+      </a>
+    </h3>
+    
+    <p *ngIf="gato.price">
+      Preço R${{gato.price}}
+    </p>
+    <p *ngIf="gato.description">
+      Descrição: {{ gato.description }}
+    </p>
+
+    <app-product-alerts
+      [product]="gato" 
+      (notify)="onNotify()">
+    </app-product-alerts>   
+  </div>
+</div>
+
+<div *ngIf="isGatoFilhote">
+ <div *ngFor="let gato of products5">
+    <h3>
+      <a [title]="gato.name + ' details'">
+        {{ gato.name }}
+      </a>
+    </h3>
+    
+    <p *ngIf="gato.price">
+      Preço R${{gato.price}}
+    </p>
+    <p *ngIf="gato.description">
+      Descrição: {{ gato.description }}
+    </p>
+
+    <app-product-alerts
+      [product]="gato" 
+      (notify)="onNotify()">
+    </app-product-alerts>   
+  </div>
+</div>
+
+<div *ngIf="isGatoCastrado">
+ <div *ngFor="let gato of products6">
+    <h3>
+      <a [title]="gato.name + ' details'">
+        {{ gato.name }}
+      </a>
+    </h3>
+    
+    <p *ngIf="gato.price">
+      Preço R${{gato.price}}
+    </p>
+    <p *ngIf="gato.description">
+      Descrição: {{ gato.description }}
+    </p>
+
+    <app-product-alerts
+      [product]="gato" 
+      (notify)="onNotify()">
+    </app-product-alerts>   
+  </div>
+</div>
+
+<div *ngIf="isAvesGalinha">
+ <div *ngFor="let aves of products7">
+    <h3>
+      <a [title]="aves.name + ' details'">
+        {{ aves.name }}
+      </a>
+    </h3>
+    <p *ngIf="aves.price">
+      Preço R${{aves.price}}
+    </p>
+    <p *ngIf="aves.description">
+      Descrição: {{ aves.description }}
+    </p>
+
+    <app-product-alerts
+      [product]="aves" 
+      (notify)="onNotify()">
+    </app-product-alerts>   
+  </div>
+</div>
+
+<div *ngIf="isAvesPassaros">
+ <div *ngFor="let aves of products8">
+    <h3>
+      <a [title]="aves.name + ' details'">
+        {{ aves.name }}
+      </a>
+    </h3>
+    <p *ngIf="aves.price">
+      Preço R${{aves.price}}
+    </p>
+    <p *ngIf="aves.description">
+      Descrição: {{ aves.description }}
+    </p>
+
+    <app-product-alerts
+      [product]="aves" 
+      (notify)="onNotify()">
+    </app-product-alerts>   
+  </div>
+</div>
+
+<div *ngIf="isAvesOutros">
+ <div *ngFor="let aves of products9">
+    <h3>
+      <a [title]="aves.name + ' details'">
+        {{ aves.name }}
+      </a>
+    </h3>
+    <p *ngIf="aves.price">
+      Preço R${{aves.price}}
+    </p>
+    <p *ngIf="aves.description">
+      Descrição: {{ aves.description }}
+    </p>
+
+    <app-product-alerts
+      [product]="aves" 
+      (notify)="onNotify()">
+    </app-product-alerts>   
+  </div>
+</div>
+
+
+    
+
+
+
+
+
+  
+
