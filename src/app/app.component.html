@@ -67,7 +67,9 @@
 
 <div *ngIf="isCachorroGrande">
     <div *ngFor="let cachorro of products1">
-
+      <p>
+        
+      </p>
       <h3>
         <a [title]="cachorro.name + ' details'">
           {{ cachorro.name }}
@@ -193,21 +195,24 @@
 </div>
 
 <div *ngIf="isAvesGalinha">
- <div *ngFor="let aves of products7">
+ <div *ngFor="let avesGalinha of products7">
+   <p>
+       {{avesGalinha.netImage}} 
+    </p>
     <h3>
-      <a [title]="aves.name + ' details'">
-        {{ aves.name }}
+      <a [title]="avesGalinha.name + ' details'">
+        {{ avesGalinha.name }}
       </a>
     </h3>
-    <p *ngIf="aves.price">
-      Preço R${{aves.price}}
+    <p *ngIf="avesGalinha.price">
+      Preço R${{avesGalinha.price}}
     </p>
-    <p *ngIf="aves.description">
-      Descrição: {{ aves.description }}
+    <p *ngIf="avesGalinha.description">
+      Descrição: {{ avesGalinha.description }}
     </p>
 
     <app-product-alerts
-      [product]="aves" 
+      [product]="avesGalinha" 
       (notify)="onNotify()">
     </app-product-alerts>   
   </div>

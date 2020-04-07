@@ -13,9 +13,11 @@
     "@types/node": "^13.11.0",
     "assets": "^3.0.1",
     "core-js": "^2.5.7",
+    "image": "^1.0.2",
     "ng-multiselect-dropdown": "0.2.1",
     "ngx-bootstrap": "^3.0.1",
     "orderby": "^1.1.0",
+    "png": "^3.0.3",
     "rxjs": "^6.3.3",
     "zone.js": "^0.8.26"
   },
