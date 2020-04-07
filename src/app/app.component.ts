@@ -11,7 +11,6 @@ import { avesPassaros } from './produtosAves';
 import { avesOutros } from './produtosAves';
 import { ListItem } from 'ng-multiselect-dropdown/multiselect.model';
 
-
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
